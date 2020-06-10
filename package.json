@@ -1,0 +1,27 @@
+{
+  "name": "key",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aamiiinf/key.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aamiiinf/key/issues"
+  },
+  "homepage": "https://github.com/aamiiinf/key#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "metaget": "^1.0.7",
+    "mongoose": "^5.9.18",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  }
+}
