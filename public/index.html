@@ -1,24 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
     <head>
         <title>key</title>
         <meta charset="utf-8">
         <meta name="keywords" content="کلمات کلیدی">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script>
-        $(document).ready(function(){
-        $("#btn1").click(function(){
-            $.post('/', {
-                url : $("#url1").val()
-            },function(data){
-              alert(data.msg);
-            });
-        });
-      });
-        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/app.js"></script>
     </head>
-    <body>
-        <a><input id="url1" type="text"></a>
-        <button id="btn1">click</button>
+    <body ng-app="myApp" ng-controller="myCtrl">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center pt-5">
+                    <div class="d-flex flex-column">
+                        <div>
+                            <span>
+                                <input ng-model="url" class="balloon" id="state" type="text" placeholder="link..." /><label for="state">Link</label>
+                            </span>
+                        </div>
+                        <div>
+                            <button ng-click="check_credentials()" class="btn btn-danger">Send</button>
+                        </div>
+                        <div class="pt-5">
+                            <h3>{{myDate}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

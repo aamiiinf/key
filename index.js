@@ -23,19 +23,23 @@ app.get('/', function (req, res, next) {
 });
 
 app.post('/', function (req, res, next) {
-metaget.fetch(req.body, (err, metaResponse) => {
-    if(err){
-        console.log(err);
-    }else{
-        console.log(metaResponse);
-		var newMeta = new metaTags({ 
-			meta : req.body
-		}) ;
-        newMeta.save() ;
+    var fdate = req.body.url
+    if (fdate.length) {
+        metaget.fetch(req.body, (err, metaResponse) => {
+            if(err){
+                console.log(err);
+            }else{
+                console.log(metaResponse);
+                var newMeta = new metaTags({ 
+                    meta : req.body
+                }) ;
+                newMeta.save() ;
+                }
+            });
+        
+    }else {
+        res.json('لطفا آدرس مورد نظر را وارد کنید')    
     }
-});
-
-
 });
 
 
