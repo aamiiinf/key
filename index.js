@@ -23,26 +23,25 @@ app.get('/', function (req, res, next) {
 });
 
 app.post('/', function (req, res, next) {
-    var fdate = req.body.url
-    if (fdate.length) {
-        metaget.fetch(req.body, (err, metaResponse) => {
+    metaget.fetch(req.body.adress, (err, metaResponse) => {
+        if (req.body.adress.length>=2) {
             if(err){
                 console.log(err);
             }else{
                 console.log(metaResponse);
                 var newMeta = new metaTags({ 
-                    meta : req.body
+                    meta : req.body.adress
                 }) ;
                 newMeta.save() ;
                 }
-            });
-        
-    }else {
-        res.json('لطفا آدرس مورد نظر را وارد کنید')    
-    }
+                res.json(newMeta);
+        }else{
+            res.json('لطفا آدرس مورد نظر را وارد');
+        }
+    });
 });
-
-
 
 app.listen(3000);
 console.log("app running on port 3000") ;
+
+

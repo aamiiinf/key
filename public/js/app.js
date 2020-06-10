@@ -9,7 +9,7 @@ app.controller('myCtrl', function($scope, $http) {
   
       data: {
   
-          url: $scope.url
+          adress: $scope.input1
   
       },
   }).then(function mySuccess(response) {
